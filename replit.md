@@ -1,6 +1,6 @@
-# [Project name]
+# Kit Escrita Sem Borrões
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Landing page de alta conversão para vender um PDF imprimível de atividades de escrita para crianças canhotas.
 
 ## Run & Operate
 
@@ -22,23 +22,32 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/kit-escrita-sem-borroes/src/App.tsx` — página completa, copy, mockups e comportamento interativo.
+- `artifacts/kit-escrita-sem-borroes/src/index.css` — tokens visuais, tipografia, textura de papel, responsividade e animações.
+- `artifacts/kit-escrita-sem-borroes/.replit-artifact/artifact.toml` — configuração do artefato e workflow de preview.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- A landing page é frontend-only: o checkout é um link configurável e não há dependência de backend para apresentar o produto.
+- O mockup do caderno e as prévias de atividades são ilustrações CSS/SVG próprias para evitar dependência de imagens externas.
+- Todos os CTAs de compra reutilizam a constante `CHECKOUT_URL`, mantendo a troca de checkout em um único lugar.
+- A copy evita promessas médicas, falsa urgência, depoimentos inventados e posiciona o material como apoio prático para uso em casa.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Apresenta um kit digital de 50 páginas em PDF A4 para crianças aproximadamente de 4 a 7 anos.
+- Explica a progressão das atividades, mostra amostras visuais, esclarece para quem o material é indicado e oferece CTAs recorrentes.
+- Inclui navegação suave, menu responsivo, FAQ accordion, animações leves e barra fixa de compra no mobile.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Comunicação em português brasileiro, acolhedora e específica para pais e responsáveis.
+- Estética infantil/cartoon organizada, profissional e diretamente associada a caderno, papel e lápis.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- `CHECKOUT_URL` em `src/App.tsx` ainda usa um endereço de exemplo e deve ser substituído antes da publicação.
+- O build manual do Vite exige `PORT` e `BASE_PATH`; o workflow do artefato fornece essas variáveis automaticamente.
 
 ## Pointers
 

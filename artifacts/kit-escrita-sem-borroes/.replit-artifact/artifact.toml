@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Kit Escrita Sem Borrões"
+description = "Landing page de alta conversão para um PDF imprimível com 50 páginas de atividades de escrita desenvolvido para crianças canhotas de 4 a 7 anos."
+version = "1.0.0"
+id = "artifacts/kit-escrita-sem-borroes"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20244
+
+[services.development]
+run = "pnpm --filter @workspace/kit-escrita-sem-borroes run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kit-escrita-sem-borroes", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/kit-escrita-sem-borroes/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20244"
+BASE_PATH = "/"
