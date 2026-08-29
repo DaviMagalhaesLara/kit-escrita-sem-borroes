@@ -1,0 +1,1197 @@
+# PROMPT REPLIT — LANDING PAGE "KIT DE ESCRITA PARA CANHOTOS"
+
+Crie uma **LANDING PAGE COMPLETA, PROFISSIONAL, INFANTIL, CARTOON E ALTAMENTE FOCADA EM CONVERSÃO** para vender um produto digital low ticket chamado:
+
+# KIT DE ESCRITA PARA CANHOTOS
+
+### 50 páginas de atividades de escrita para imprimir e praticar no papel
+
+O site deve utilizar como inspiração estrutural uma landing page de produto digital premium/low ticket, com:
+
+* forte apresentação visual do produto;
+* headline persuasiva;
+* identificação do público;
+* apresentação clara da solução;
+* demonstração visual do produto;
+* carrossel interativo mostrando o ebook;
+* benefícios;
+* conteúdo do produto;
+* provas sociais;
+* bônus;
+* oferta;
+* garantia;
+* FAQ;
+* múltiplos CTAs;
+* elementos de confiança.
+
+Porém, **NÃO copie textos, imagens, identidade visual ou conteúdo da página de referência**.
+
+Use apenas a lógica de estrutura e conversão como inspiração.
+
+---
+
+# 1. OBJETIVO PRINCIPAL
+
+A página deve vender um único produto:
+
+## KIT DE ESCRITA PARA CANHOTOS
+
+O visitante precisa entender em poucos segundos:
+
+**O que é?**
+
+Um caderno digital de atividades de escrita.
+
+**Para quem é?**
+
+Crianças que escrevem com a mão esquerda, principalmente em fase de pré-alfabetização e alfabetização inicial.
+
+**O que recebe?**
+
+Um PDF com 50 páginas.
+
+**Como usa?**
+
+Imprime em casa e realiza as atividades com lápis.
+
+**O que encontra dentro?**
+
+Traçados, pré-escrita, letras, sílabas, palavras, frases, pequenos textos e desafios.
+
+**Quanto custa?**
+
+R$ 29,90.
+
+---
+
+# 2. CONCEITO VISUAL
+
+A página deve parecer uma mistura de:
+
+### 📚 MATERIAL PEDAGÓGICO
+
+*
+
+### 🧸 PRODUTO INFANTIL
+
+*
+
+### ✏️ CADERNO DE ATIVIDADES
+
+*
+
+### 💻 LANDING PAGE MODERNA
+
+*
+
+### 🛍️ PRODUTO DIGITAL PREMIUM
+
+Não quero um site infantil genérico.
+
+Quero que seja imediatamente perceptível que a página está vendendo um **caderno de escrita para crianças canhotas**.
+
+---
+
+# 3. CORES
+
+Utilizar uma paleta infantil, alegre e suave.
+
+Sugestão:
+
+* azul-claro;
+* amarelo;
+* laranja;
+* verde-menta;
+* lilás;
+* rosa suave;
+* branco;
+* azul mais escuro para textos.
+
+Utilizar as cores em:
+
+* cards;
+* botões;
+* pequenos elementos;
+* ilustrações;
+* etiquetas;
+* fundos de seções.
+
+NÃO utilizar cores excessivamente saturadas em toda a página.
+
+A página deve continuar elegante e profissional.
+
+---
+
+# 4. ELEMENTOS CARTOON
+
+Espalhar pequenos elementos ilustrados pela página:
+
+✏️ lápis
+
+🖍️ giz de cera
+
+📚 livros
+
+📄 folhas
+
+🔤 letras
+
+⭐ estrelas
+
+☁️ nuvens
+
+➰ rabiscos
+
+➡️ setas
+
+🎒 elementos escolares
+
+Utilizar ilustrações em estilo cartoon.
+
+Os elementos devem funcionar como decoração e reforçar o universo infantil.
+
+Não deixar a página visualmente poluída.
+
+---
+
+# 5. HERO SECTION
+
+A primeira tela precisa causar impacto.
+
+Criar uma pequena etiqueta no topo:
+
+### ✏️ MATERIAL PARA CRIANÇAS CANHOTAS
+
+Headline:
+
+# "Um caderno de escrita pensado para quem escreve com a mão esquerda."
+
+Subheadline:
+
+> "50 páginas de atividades para praticar traçados, letras, sílabas, palavras e frases — prontas para imprimir e fazer em casa."
+
+Adicionar badges:
+
+### 📄 50 PÁGINAS
+
+### 🖨️ PDF IMPRIMÍVEL
+
+### 📐 FORMATO A4
+
+### ✏️ ATIVIDADES NO PAPEL
+
+CTA principal:
+
+# QUERO O KIT
+
+Abaixo:
+
+**Acesso digital após confirmação do pagamento**
+
+---
+
+# 6. MOCKUP PRINCIPAL
+
+Ao lado da headline, criar um mockup grande do produto.
+
+Mostrar:
+
+* capa do ebook;
+* várias páginas saindo do caderno;
+* lápis;
+* borracha;
+* folhas;
+* elementos cartoon.
+
+Capa:
+
+# KIT DE ESCRITA
+
+## PARA CANHOTOS
+
+### 50 páginas de atividades
+
+Adicionar uma pequena etiqueta:
+
+**PDF IMPRIMÍVEL**
+
+O mockup deve dar a impressão de um produto físico real.
+
+---
+
+# 7. CARROSSEL DO EBOOK — ELEMENTO PRINCIPAL
+
+ESTA É UMA DAS PARTES MAIS IMPORTANTES DA LANDING PAGE.
+
+Criar um **CARROSSEL INTERATIVO DE PÁGINAS DO EBOOK**.
+
+Título:
+
+# "Veja por dentro antes de comprar"
+
+Subtítulo:
+
+> "Deslize pelas páginas e veja como são as atividades."
+
+O carrossel deve permitir:
+
+### Desktop
+
+* clicar nas setas;
+* clicar nos indicadores;
+* visualizar a página atual em tamanho grande;
+* visualizar parcialmente as páginas vizinhas.
+
+### Mobile
+
+Permitir:
+
+**SWIPE HORIZONTAL**
+
+para o usuário arrastar o dedo e navegar pelas páginas.
+
+---
+
+# 8. PÁGINAS DO CARROSSEL
+
+Criar pelo menos **10 slides**.
+
+### SLIDE 1
+
+Capa do Kit.
+
+### SLIDE 2
+
+Coordenação motora — traços.
+
+### SLIDE 3
+
+Pré-escrita.
+
+### SLIDE 4
+
+Letras maiúsculas.
+
+### SLIDE 5
+
+Letras minúsculas.
+
+### SLIDE 6
+
+Sílabas.
+
+### SLIDE 7
+
+Palavras.
+
+### SLIDE 8
+
+Frases.
+
+### SLIDE 9
+
+Desafios.
+
+### SLIDE 10
+
+Certificado.
+
+Cada slide deve parecer uma página real de um caderno infantil.
+
+---
+
+# 9. CARROSSEL — INTERAÇÃO
+
+Adicionar:
+
+← botão anterior
+
+→ botão próximo
+
+Indicadores:
+
+● ○ ○ ○ ○ ○ ○ ○ ○ ○
+
+Adicionar contador:
+
+**Página 3 de 10**
+
+No mobile, permitir swipe.
+
+Adicionar uma pequena indicação:
+
+### "← Arraste para ver mais →"
+
+O carrossel deve ter:
+
+* animação suave;
+* transição elegante;
+* zoom opcional ao clicar;
+* boa qualidade visual;
+* bordas arredondadas;
+* sombra;
+* fundo claro.
+
+---
+
+# 10. SEÇÃO DE IDENTIFICAÇÃO
+
+Título:
+
+# "Seu filho escreve com a mão esquerda?"
+
+Texto curto e acolhedor.
+
+Explicar que encontrar materiais especificamente estruturados para crianças canhotas pode ser difícil.
+
+Criar três cards:
+
+### ✏️ MATERIAL GENÉRICO
+
+Nem sempre deixa claro como foi pensado para a experiência de uma criança canhota.
+
+### 📄 FOLHAS SOLTAS
+
+Pode ser difícil encontrar atividades organizadas em uma sequência.
+
+### 🖐️ PRÁTICA ESPECÍFICA
+
+O Kit reúne atividades pensando na experiência de quem escreve com a mão esquerda.
+
+Final:
+
+# "Foi para tornar essa prática mais simples que criamos o Kit de Escrita para Canhotos."
+
+---
+
+# 11. SEÇÃO DE SOLUÇÃO
+
+Título:
+
+# "Do primeiro traço à primeira frase."
+
+Criar uma timeline horizontal no desktop e vertical no mobile:
+
+### 01 — TRAÇOS
+
+Linhas, curvas, ondas e zig-zag.
+
+↓
+
+### 02 — PRÉ-ESCRITA
+
+Movimentos preparatórios.
+
+↓
+
+### 03 — LETRAS
+
+Maiúsculas e minúsculas.
+
+↓
+
+### 04 — SÍLABAS
+
+Prática e combinação.
+
+↓
+
+### 05 — PALAVRAS
+
+Do simples ao mais elaborado.
+
+↓
+
+### 06 — FRASES
+
+Cópia, completar e produção.
+
+↓
+
+### 07 — PEQUENOS TEXTOS
+
+Primeiras produções.
+
+---
+
+# 12. SEÇÃO "COMO É UMA ATIVIDADE?"
+
+Mostrar uma atividade ampliada.
+
+Criar quatro etapas:
+
+### 👀 1. OBSERVE
+
+Veja o modelo.
+
+### ✏️ 2. CUBRA
+
+Siga o pontilhado.
+
+### 🔁 3. PRATIQUE
+
+Repita o movimento.
+
+### ⭐ 4. FAÇA SOZINHO
+
+Escreva sem o modelo.
+
+Criar uma ilustração mostrando a progressão.
+
+---
+
+# 13. SEÇÃO "O QUE TEM DENTRO?"
+
+Título:
+
+# "50 páginas de atividades para imprimir"
+
+Criar cards coloridos:
+
+### ✏️ COORDENAÇÃO MOTORA
+
+Páginas 4–8.
+
+### 🌀 PRÉ-ESCRITA
+
+Páginas 9–12.
+
+### 🔠 LETRAS MAIÚSCULAS
+
+Páginas 13–17.
+
+### 🔡 LETRAS MINÚSCULAS
+
+Páginas 18–22.
+
+### 🔤 SÍLABAS
+
+Páginas 23–28.
+
+### 📝 PALAVRAS
+
+Páginas 29–34.
+
+### 💬 FRASES
+
+Páginas 35–38.
+
+### 📖 PEQUENOS TEXTOS
+
+Páginas 39–41.
+
+### ⭐ DESAFIOS
+
+Páginas 42–46.
+
+### 🏆 DESAFIO FINAL
+
+Páginas 47–49.
+
+### 🎓 CERTIFICADO
+
+Página 50.
+
+Mostrar a informação:
+
+# 50 PÁGINAS
+
+de maneira visualmente muito forte.
+
+---
+
+# 14. SEÇÃO "IMPRIMA EM CASA"
+
+Título:
+
+# "Baixe. Imprima. Pegue o lápis. Comece."
+
+Criar uma ilustração com:
+
+PDF → impressora → folhas → criança escrevendo.
+
+Passos:
+
+### 1. COMPRE
+
+### 2. RECEBA O PDF
+
+### 3. IMPRIMA
+
+### 4. FAÇA AS ATIVIDADES
+
+Adicionar:
+
+**A4 • PDF • PRONTO PARA IMPRIMIR**
+
+---
+
+# 15. PROVA VISUAL
+
+Título:
+
+# "Veja o material fora da tela"
+
+Mostrar mockups de páginas impressas.
+
+Criar uma composição com:
+
+* folhas;
+* lápis;
+* caderno;
+* páginas preenchidas;
+* páginas em branco.
+
+Não apresentar mockups como fotos de clientes.
+
+---
+
+# 16. PROVA SOCIAL
+
+Título:
+
+# "Quem já usou, conta"
+
+Criar uma seção preparada para depoimentos reais.
+
+IMPORTANTE:
+
+**NÃO INVENTAR DEPOIMENTOS.**
+
+Criar 6 cards vazios/configuráveis:
+
+⭐⭐⭐⭐⭐
+
+"[DEPOIMENTO REAL]"
+
+**[NOME]**
+
+**[CIDADE/UF]**
+
+Também permitir inserir:
+
+* foto;
+* print de WhatsApp;
+* foto do material impresso.
+
+Caso ainda não existam avaliações, esconder os cards vazios e priorizar a demonstração visual do produto.
+
+---
+
+# 17. AUTORIDADE
+
+Criar uma seção:
+
+# "Quem criou o Kit?"
+
+Área para:
+
+* foto;
+* nome;
+* descrição;
+* experiência real.
+
+Usar placeholders:
+
+`[NOME]`
+
+`[FORMAÇÃO/EXPERIÊNCIA REAL]`
+
+Nunca inventar credenciais.
+
+---
+
+# 18. BÔNUS
+
+Criar uma seção visual de bônus com aparência semelhante a uma "pilha de produtos".
+
+Título:
+
+# "E ainda tem mais..."
+
+Criar até 3 espaços configuráveis:
+
+### 🎁 BÔNUS 1
+
+`[NOME DO BÔNUS]`
+
+### 🎁 BÔNUS 2
+
+`[NOME DO BÔNUS]`
+
+### 🎁 BÔNUS 3
+
+`[NOME DO BÔNUS]`
+
+IMPORTANTE:
+
+Não inventar bônus.
+
+Só mostrar os cards caso os bônus sejam realmente oferecidos.
+
+---
+
+# 19. EMPILHAMENTO DE VALOR
+
+Criar uma seção visual:
+
+# "Olha tudo o que você recebe"
+
+Mostrar:
+
+### 📘 KIT DE ESCRITA
+
+50 páginas
+
+### 🎁 BÔNUS 1
+
+[se aplicável]
+
+### 🎁 BÔNUS 2
+
+[se aplicável]
+
+### 🎁 BÔNUS 3
+
+[se aplicável]
+
+Final:
+
+## TUDO ISSO POR:
+
+# R$ 29,90
+
+CTA:
+
+# QUERO MEU KIT
+
+---
+
+# 20. OFERTA
+
+Criar um grande card central.
+
+Usar:
+
+* fundo colorido suave;
+* mockup;
+* estrelas;
+* elementos cartoon;
+* selo "OFERTA DIGITAL".
+
+Mostrar:
+
+# KIT DE ESCRITA PARA CANHOTOS
+
+### 50 páginas imprimíveis
+
+✓ Coordenação
+
+✓ Pré-escrita
+
+✓ Letras
+
+✓ Sílabas
+
+✓ Palavras
+
+✓ Frases
+
+✓ Textos
+
+✓ Desafios
+
+✓ Certificado
+
+Preço:
+
+# R$ 29,90
+
+CTA:
+
+# QUERO O KIT AGORA
+
+Texto abaixo:
+
+**Produto digital • PDF • Acesso após confirmação**
+
+---
+
+# 21. GARANTIA
+
+Criar uma seção com um grande selo/cartoon de escudo.
+
+Título:
+
+# "Você pode conhecer o material com tranquilidade."
+
+Inserir placeholder:
+
+`[PRAZO REAL DA GARANTIA]`
+
+Não inventar prazo.
+
+Texto editável para substituir conforme a política real.
+
+---
+
+# 22. FAQ
+
+Criar accordion animado.
+
+Perguntas:
+
+### O produto é físico?
+
+Não. É um PDF digital.
+
+### Quantas páginas?
+
+50 páginas.
+
+### Posso imprimir em casa?
+
+Sim.
+
+### Qual formato?
+
+A4.
+
+### Para qual idade?
+
+Aproximadamente 4–7 anos, dependendo do nível da criança.
+
+### É feito para canhotos?
+
+Sim. O material foi estruturado pensando na experiência de crianças que escrevem com a mão esquerda.
+
+### Preciso de algum aplicativo?
+
+Não.
+
+### Posso visualizar pelo celular?
+
+Sim, mas o objetivo principal é imprimir e realizar as atividades no papel.
+
+### Como recebo o arquivo?
+
+Após confirmação do pagamento, conforme o sistema de entrega configurado.
+
+---
+
+# 23. CTA FINAL
+
+Criar uma seção extremamente visual.
+
+Utilizar:
+
+* fundo colorido;
+* estrelas;
+* lápis;
+* folhas;
+* personagem/cartoon;
+* mockup do Kit.
+
+Headline:
+
+# "50 páginas prontas para sair da tela e ir para o papel."
+
+Subheadline:
+
+> "Um material de escrita pensado para crianças que escrevem com a mão esquerda."
+
+Botão:
+
+# QUERO O KIT DE ESCRITA
+
+Abaixo:
+
+**50 páginas • PDF • A4 • Imprimível**
+
+---
+
+# 24. BARRA FIXA MOBILE
+
+No celular, adicionar uma barra inferior fixa:
+
+### KIT DE ESCRITA
+
+**R$ 29,90**
+
+[ QUERO O KIT ]
+
+A barra deve ser pequena, elegante e não atrapalhar a navegação.
+
+---
+
+# 25. CTA AO LONGO DA PÁGINA
+
+Adicionar CTA após:
+
+1. Hero.
+2. Carrossel.
+3. Conteúdo do Kit.
+4. Prova social.
+5. Oferta.
+6. Final.
+
+Todos devem utilizar:
+
+`CHECKOUT_URL`
+
+Criar no código:
+
+`const CHECKOUT_URL = "COLE_SEU_CHECKOUT_AQUI";`
+
+---
+
+# 26. ELEMENTOS DE CREDIBILIDADE
+
+A página deve transmitir credibilidade através de:
+
+### PRODUTO VISÍVEL
+
+O cliente consegue ver o que está comprando.
+
+### CARROSSEL
+
+Pode navegar pelas páginas antes de comprar.
+
+### ESPECIFICIDADE
+
+50 páginas e conteúdo claramente descrito.
+
+### PROVA SOCIAL
+
+Somente avaliações reais.
+
+### TRANSPARÊNCIA
+
+Explicar que é PDF e que precisa ser impresso.
+
+### FAQ
+
+Responder as principais dúvidas.
+
+### GARANTIA
+
+Somente a garantia realmente oferecida.
+
+### SEGURANÇA
+
+Informações verdadeiras sobre pagamento e entrega.
+
+---
+
+# 27. MICROELEMENTOS DE CONVERSÃO
+
+Adicionar pequenos textos próximos aos CTAs:
+
+🔒 Compra segura
+
+📄 Produto digital
+
+⚡ Acesso após confirmação
+
+🖨️ Pronto para imprimir
+
+📐 Formato A4
+
+Não exagerar na quantidade de selos.
+
+---
+
+# 28. ANIMAÇÕES
+
+Utilizar animações suaves:
+
+* cards aparecendo no scroll;
+* elementos cartoon flutuando;
+* estrelas aparecendo;
+* mockup com movimento leve;
+* carrossel suave;
+* hover nos botões;
+* accordion animado.
+
+NÃO utilizar animações excessivas.
+
+A página precisa carregar rapidamente.
+
+---
+
+# 29. CARROSSEL — REQUISITOS TÉCNICOS
+
+O carrossel deve ser realmente funcional.
+
+No desktop:
+
+* setas;
+* indicadores;
+* navegação por clique;
+* drag opcional;
+* preview das páginas laterais.
+
+No mobile:
+
+* swipe;
+* snapping;
+* indicadores;
+* botão de ampliar.
+
+Ao clicar na página:
+
+Abrir uma visualização maior em modal/lightbox.
+
+Adicionar botão:
+
+**× Fechar**
+
+---
+
+# 30. DESIGN DO CARROSSEL
+
+O carrossel deve parecer uma **pilha de folhas de um caderno infantil**.
+
+Cada página deve ter:
+
+* bordas arredondadas;
+* sombra;
+* fundo branco;
+* aparência de papel;
+* pequenas ilustrações.
+
+Ao lado ou abaixo da página:
+
+### "PÁGINA 5 — PRÉ-ESCRITA"
+
+Pequena descrição.
+
+Exemplo:
+
+> "Exercícios de curvas, arcos e movimentos preparatórios para a escrita."
+
+Isso ajuda o cliente a entender o que está vendo.
+
+---
+
+# 31. RESPONSIVIDADE
+
+Desktop:
+
+Layout amplo com duas colunas no hero.
+
+Tablet:
+
+Layout intermediário.
+
+Mobile:
+
+Tudo em coluna.
+
+O carrossel deve ser especialmente bem adaptado ao celular.
+
+Botões grandes.
+
+Texto legível.
+
+Espaçamento confortável.
+
+---
+
+# 32. TECNOLOGIA
+
+Utilizar:
+
+* React;
+* TypeScript;
+* CSS moderno;
+* HTML semântico.
+
+Criar componentes:
+
+`Header`
+
+`Hero`
+
+`TrustBar`
+
+`ProblemSection`
+
+`SolutionSection`
+
+`Progression`
+
+`EbookCarousel`
+
+`ActivityDemo`
+
+`ProductContents`
+
+`PrintableSection`
+
+`VisualProof`
+
+`SocialProof`
+
+`Authority`
+
+`Bonuses`
+
+`ValueStack`
+
+`Offer`
+
+`Guarantee`
+
+`FAQ`
+
+`FinalCTA`
+
+`MobileStickyCTA`
+
+`Footer`
+
+---
+
+# 33. CONFIGURAÇÕES EDITÁVEIS
+
+Criar um arquivo de configuração:
+
+`PRODUCT_NAME`
+
+`PRODUCT_PRICE`
+
+`CHECKOUT_URL`
+
+`GUARANTEE_DAYS`
+
+`CREATOR_NAME`
+
+`CREATOR_BIO`
+
+`BONUSES`
+
+`TESTIMONIALS`
+
+`EBOOK_PAGES`
+
+Assim será fácil substituir informações posteriormente.
+
+---
+
+# 34. SEO
+
+Title:
+
+**Kit de Escrita para Canhotos | 50 Páginas Imprimíveis**
+
+Description:
+
+**Kit de atividades de escrita para crianças canhotas. São 50 páginas em PDF para imprimir e praticar traçados, letras, sílabas, palavras e frases.**
+
+Utilizar:
+
+H1 → uma única headline principal.
+
+H2 → seções.
+
+H3 → cards e subtítulos.
+
+---
+
+# 35. PERFORMANCE
+
+Priorizar:
+
+* carregamento rápido;
+* imagens otimizadas;
+* lazy loading das páginas do carrossel;
+* WebP quando possível;
+* evitar bibliotecas desnecessárias;
+* CSS eficiente.
+
+Não deixar o carrossel pesado.
+
+---
+
+# 36. REGRA DE OURO DO DESIGN
+
+A landing page precisa fazer o visitante passar por esta sequência mental:
+
+### "É para uma criança canhota."
+
+↓
+
+### "É um material de escrita."
+
+↓
+
+### "São 50 páginas."
+
+↓
+
+### "Posso ver as páginas antes de comprar."
+
+↓
+
+### "Entendi exatamente o que vem."
+
+↓
+
+### "Parece um produto de verdade."
+
+↓
+
+### "O preço é acessível."
+
+↓
+
+### "Posso comprar."
+
+---
+
+# 37. RESULTADO FINAL
+
+Quero uma landing page com aparência de **produto digital infantil profissional**, não de um simples site escolar.
+
+Ela deve ter:
+
+🧸 estética infantil
+
+✏️ elementos cartoon
+
+📚 aparência de material pedagógico
+
+📄 mockups
+
+📖 CARROSSEL INTERATIVO DO EBOOK
+
+⭐ prova visual
+
+💬 espaço para avaliações reais
+
+🎁 seção de bônus configurável
+
+💰 oferta low ticket
+
+🛡️ garantia configurável
+
+❓ FAQ
+
+🔒 elementos de confiança
+
+📱 excelente versão mobile
+
+🛒 múltiplos CTAs
+
+O elemento visual mais importante depois do hero deve ser o:
+
+# CARROSSEL "VEJA O EBOOK POR DENTRO"
+
+Quero que o visitante possa **arrastar/clicar e realmente folhear virtualmente as páginas do Kit**, criando a sensação de que está abrindo o material antes de comprá-lo.
+
+Não invente depoimentos, bônus, credenciais, garantia ou provas sociais.
+
+Onde essas informações ainda não existirem, utilize placeholders editáveis.
+
+Crie o projeto completo e funcional no Replit.

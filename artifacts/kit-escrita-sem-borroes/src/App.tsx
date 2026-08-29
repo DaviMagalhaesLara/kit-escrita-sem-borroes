@@ -169,6 +169,32 @@ function PagePreview({
   );
 }
 
+function EbookCarouselSlot() {
+  return (
+    <div id="ebook-carousel" className="mt-16 scroll-mt-24 rounded-[28px] border border-dashed border-[hsl(var(--secondary))]/60 bg-[hsl(var(--card))]/[.06] p-5 md:p-8" data-testid="ebook-carousel-slot" aria-label="Espaço reservado para o carrossel do e-book">
+      <div className="relative flex min-h-[330px] items-center justify-center overflow-hidden rounded-[20px] border border-[hsl(var(--card))]/20 bg-[hsl(var(--card))]/[.06] p-6 md:min-h-[410px]">
+        <div className="absolute left-[10%] top-[12%] h-48 w-36 rotate-[-9deg] rounded border border-[hsl(var(--card))]/20 bg-[hsl(var(--card))]/10" />
+        <div className="absolute right-[10%] top-[16%] h-52 w-40 rotate-[9deg] rounded border border-[hsl(var(--card))]/20 bg-[hsl(var(--card))]/10" />
+        <div className="relative z-10 w-full max-w-[390px] rounded-[8px] border border-[hsl(var(--card))]/40 bg-[hsl(var(--card))] p-7 text-center shadow-[10px_12px_0_rgba(0,0,0,.12)]">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[hsl(var(--secondary))] text-[hsl(var(--primary))]">
+            <BookOpen size={22} strokeWidth={1.8} />
+          </div>
+          <div className="mt-5 font-mono-label text-[9px] font-bold uppercase tracking-[.14em] text-[hsl(var(--accent))]">carrossel do e-book</div>
+          <h3 className="mt-3 font-display text-[28px] font-bold leading-none text-[hsl(var(--primary))]">As páginas reais entram aqui.</h3>
+          <p className="mx-auto mt-4 max-w-[290px] text-sm leading-6 text-[hsl(var(--muted-foreground))]">Este espaço já está reservado para você folhear o Kit antes da compra assim que enviar os arquivos.</p>
+          <div className="mt-6 flex items-center justify-center gap-2">
+            {[0, 1, 2, 3, 4].map((item) => <span key={item} className={`h-2 w-2 rounded-full ${item === 0 ? 'bg-[hsl(var(--accent))]' : 'bg-[hsl(var(--border))]'}`} />)}
+          </div>
+        </div>
+      </div>
+      <div className="mt-5 flex flex-col gap-2 text-center md:flex-row md:items-center md:justify-between md:text-left">
+        <p className="font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-[hsl(var(--secondary))]">espaço preparado para 10 páginas</p>
+        <p className="text-xs text-[hsl(var(--card))]/55">Setas, indicadores, swipe e ampliação serão ativados com as páginas finais.</p>
+      </div>
+    </div>
+  );
+}
+
 function FaqItem({
   question,
   answer,
@@ -381,6 +407,7 @@ function Home() {
             <div className="flex items-center gap-3"><Sparkles size={19} className="text-[hsl(var(--secondary))]" /><span className="font-display text-xl font-bold">Material simples, bonito e possível.</span></div>
             <button type="button" onClick={() => scrollTo('comprar')} data-testid="button-samples-buy" className="inline-flex items-center gap-2 text-sm font-bold text-[hsl(var(--secondary))]">Quero começar em casa <ArrowRight size={15} /></button>
           </div>
+          <EbookCarouselSlot />
         </div>
       </section>
 

@@ -32,6 +32,7 @@ Landing page de alta conversão para vender um PDF imprimível de atividades de 
 - O mockup do caderno e as prévias de atividades são ilustrações CSS/SVG próprias para evitar dependência de imagens externas.
 - Todos os CTAs de compra reutilizam a constante `CHECKOUT_URL`, mantendo a troca de checkout em um único lugar.
 - A copy evita promessas médicas, falsa urgência, depoimentos inventados e posiciona o material como apoio prático para uso em casa.
+- O bloco `ebook-carousel-slot` reserva a área de demonstração para receber as páginas reais do e-book quando forem enviadas.
 
 ## Product
 
@@ -47,6 +48,7 @@ Landing page de alta conversão para vender um PDF imprimível de atividades de 
 ## Gotchas
 
 - `CHECKOUT_URL` em `src/App.tsx` ainda usa um endereço de exemplo e deve ser substituído antes da publicação.
+- O espaço do carrossel é intencionalmente um placeholder até que as páginas reais do e-book sejam fornecidas.
 - O build manual do Vite exige `PORT` e `BASE_PATH`; o workflow do artefato fornece essas variáveis automaticamente.
 
 ## Pointers
