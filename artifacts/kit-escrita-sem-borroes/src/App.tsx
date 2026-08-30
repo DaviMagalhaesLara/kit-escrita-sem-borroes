@@ -13,10 +13,13 @@ import {
   Heart,
   Maximize2,
   Menu,
+  PartyPopper,
   Pencil,
   Printer,
+  Smile,
   ShieldCheck,
   Sparkles,
+  Star,
   X,
 } from 'lucide-react';
 
@@ -113,7 +116,7 @@ function NotebookIllustration() {
         <div className="mt-2 font-mono-label text-[7px] font-bold uppercase text-[hsl(var(--muted-foreground))]">imprima em A4</div>
       </div>
       <div className="absolute left-[2%] top-[28%] -rotate-12 rounded-full bg-[hsl(var(--accent))] px-3 py-2 font-display text-sm font-bold text-[hsl(var(--card))] shadow-[3px_4px_0_rgba(23,50,77,.14)]">
-        feito para ela
+        vamos brincar!
       </div>
     </div>
   );
@@ -412,8 +415,13 @@ function Home() {
             <h1 className="reveal reveal-delay-1 mt-7 max-w-[650px] font-display text-[clamp(3.15rem,7vw,6.2rem)] font-bold leading-[.87] tracking-[-.065em] text-[hsl(var(--primary))]">
               Um caderno de escrita feito pensando em quem escreve com a <span className="relative inline-block text-[hsl(var(--accent))]">mão esquerda.</span>
             </h1>
+            <div className="kid-hello reveal reveal-delay-2 mt-6 inline-flex items-center gap-2 rounded-full border border-[#b6ddd5] bg-[#e8f7f3] px-3 py-2 text-sm font-bold text-[#17324d]">
+              <Smile size={17} className="text-[#e96957]" />
+              <span>Oi, pequeno escritor! Vamos começar?</span>
+              <span className="kid-hello-stars" aria-hidden="true">✦ ✦</span>
+            </div>
             <p className="reveal reveal-delay-2 mt-7 max-w-[490px] text-[17px] leading-7 text-[hsl(var(--muted-foreground))]">
-              50 páginas de atividades para praticar traçados, letras, sílabas, palavras e frases — prontas para imprimir e fazer em casa.
+              50 páginas para brincar de traçar, descobrir letras, juntar sílabas e escrever as primeiras frases — prontas para imprimir e fazer em casa.
             </p>
             <div className="reveal reveal-delay-3 mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <PurchaseLink testId="link-hero-checkout" className="w-full px-7 py-4 sm:w-auto">Quero o Kit Escrita Sem Borrões <ArrowRight size={17} /></PurchaseLink>
@@ -436,14 +444,14 @@ function Home() {
       <section className="border-b border-[hsl(var(--border))] bg-[hsl(var(--primary))] text-[hsl(var(--card))]">
         <div className="container-wide grid grid-cols-1 divide-y divide-[hsl(var(--card))]/20 py-1 md:grid-cols-3 md:divide-x md:divide-y-0">
           {[
-            [Printer, 'Imprima em casa', 'Folhas A4, prontas para usar'],
-            [Hand, 'Pensado para canhotos', 'Orientações que respeitam a mão esquerda'],
-            [Pencil, 'É só pegar o lápis', 'Atividades para fazer no seu tempo'],
+            [Printer, 'Prepare a brincadeira', 'Folhas A4, lápis e um cantinho gostoso'],
+            [Hand, 'Mão esquerda, do seu jeito', 'Orientações que acompanham cada pequeno movimento'],
+            [Pencil, 'Vamos tentar?', 'Atividades curtas para praticar sem pressa'],
           ].map(([Icon, title, detail], index) => {
             const IconComponent = Icon as typeof Printer;
             return (
               <div key={title as string} className="flex items-center gap-4 px-2 py-5 md:px-8" data-testid={`feature-strip-${index}`}>
-                <IconComponent size={25} strokeWidth={1.6} className="shrink-0 text-[hsl(var(--secondary))]" />
+                <IconComponent size={25} strokeWidth={1.6} className={`shrink-0 ${['text-[hsl(var(--secondary))]', 'text-[#a9e0d4]', 'text-[#ffc7d1]'][index]}`} />
                 <div><div className="font-display text-lg font-bold">{title as string}</div><div className="mt-0.5 text-xs text-[hsl(var(--card))]/65">{detail as string}</div></div>
               </div>
             );
@@ -467,7 +475,7 @@ function Home() {
               const IconComponent = Icon as typeof Pencil;
               return (
                 <div key={title as string} className="rounded-[22px] border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-7 transition-transform duration-300 hover:-translate-y-1" data-testid={`card-why-${index}`}>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[hsl(var(--secondary))] text-[hsl(var(--primary))]"><IconComponent size={21} strokeWidth={1.8} /></div>
+                  <div className={`flex h-11 w-11 items-center justify-center rounded-xl text-[hsl(var(--primary))] ${['bg-[#ffd86e]', 'bg-[#b7e6dc]', 'bg-[#ffc7d1]'][index]}`}><IconComponent size={21} strokeWidth={1.8} /></div>
                   <h3 className="mt-9 font-display text-[24px] font-bold text-[hsl(var(--primary))]">{title as string}</h3>
                   <p className="mt-3 text-sm leading-6 text-[hsl(var(--muted-foreground))]">{detail as string}</p>
                 </div>
@@ -481,13 +489,14 @@ function Home() {
         <div className="container-wide">
           <div className="grid gap-12 md:grid-cols-[.72fr_1.28fr] md:gap-20">
             <div>
-              <SectionLabel>Um caderno com intenção</SectionLabel>
-              <h2 className="font-display text-[clamp(2.6rem,5vw,4.4rem)] font-bold leading-[.92] tracking-[-.055em] text-[hsl(var(--primary))]">Cada página prepara a próxima.</h2>
-              <p className="mt-6 max-w-sm text-[15px] leading-7 text-[hsl(var(--muted-foreground))]">A criança começa com movimentos gostosos de fazer e vai ganhando confiança até formar suas primeiras frases. Sem pressa, sem comparação.</p>
+              <SectionLabel>Do primeiro traço ao “eu consegui!”</SectionLabel>
+              <h2 className="font-display text-[clamp(2.6rem,5vw,4.4rem)] font-bold leading-[.92] tracking-[-.055em] text-[hsl(var(--primary))]">Cada página prepara a próxima aventura.</h2>
+              <p className="mt-6 max-w-sm text-[15px] leading-7 text-[hsl(var(--muted-foreground))]">A criança começa com movimentos gostosos de fazer e vai ganhando confiança até formar suas primeiras frases. Um passo de cada vez, com espaço para comemorar.</p>
               <div className="mt-8 flex items-center gap-3 rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[hsl(var(--secondary))] text-[hsl(var(--primary))]"><BookOpen size={19} /></div>
-                <div><div className="text-sm font-bold">50 páginas para explorar</div><div className="mt-0.5 text-xs text-[hsl(var(--muted-foreground))]">da coordenação ao certificado</div></div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#d9f1ec] text-[hsl(var(--primary))]"><BookOpen size={19} /></div>
+                <div><div className="text-sm font-bold">50 páginas para explorar</div><div className="mt-0.5 text-xs text-[hsl(var(--muted-foreground))]">do “vamos tentar?” ao certificado</div></div>
               </div>
+              <div className="kid-note mt-4 flex items-center gap-2 text-sm font-bold text-[hsl(var(--primary))]"><Star size={16} fill="currentColor" className="text-[#f5b84b]" /><span>Todo rabisco pode virar uma descoberta.</span></div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
@@ -534,16 +543,16 @@ function Home() {
         <div className="container-wide">
           <div className="grid gap-12 md:grid-cols-[.8fr_1.2fr] md:gap-24">
             <div>
-              <SectionLabel>Do PDF à mesa</SectionLabel>
-              <h2 className="font-display text-[clamp(2.7rem,5vw,4.5rem)] font-bold leading-[.9] tracking-[-.06em] text-[hsl(var(--primary))]">Uma rotina pequena que cabe no dia.</h2>
+              <SectionLabel>Passo a passo, sem pressa</SectionLabel>
+              <h2 className="font-display text-[clamp(2.7rem,5vw,4.5rem)] font-bold leading-[.9] tracking-[-.06em] text-[hsl(var(--primary))]">Uma rotina pequena que vira aventura.</h2>
             </div>
             <div className="relative">
               <div className="absolute bottom-8 left-[17px] top-8 w-px bg-[hsl(var(--border))]" />
               {[
-                ['01', 'Baixe o arquivo', 'O PDF chega para você depois da compra, pronto para guardar.'],
-                ['02', 'Imprima o que quiser', 'Escolha as páginas, use papel A4 e deixe o lápis por perto.'],
-                ['03', 'Sente junto e explore', 'Acompanhe sem corrigir cada traço. O importante é experimentar.'],
-                ['04', 'Volte quando quiser', 'As páginas podem ser reimpressas para repetir uma atividade.'],
+                ['01', 'Escolha uma missão', 'Comece por uma página e diga: “vamos tentar juntos?”.'],
+                ['02', 'Prepare a mesa', 'Escolha papel A4, um lápis confortável e um cantinho tranquilo.'],
+                ['03', 'Trace, brinque e tente', 'Acompanhe sem corrigir cada traço. O importante é experimentar.'],
+                ['04', 'Comemore o “consegui!”', 'Volte quando quiser e repita a atividade no ritmo da criança.'],
               ].map(([number, title, detail]) => (
                 <div key={number} className="relative flex gap-6 pb-9 last:pb-0" data-testid={`step-${number}`}>
                   <span className="z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-[hsl(var(--background))] bg-[hsl(var(--secondary))] font-mono-label text-[10px] font-bold text-[hsl(var(--primary))] shadow-[0_0_0_1px_hsl(var(--border))]">{number}</span>
@@ -649,10 +658,10 @@ function Home() {
       <section className="relative overflow-hidden bg-[hsl(var(--primary))] py-20 text-[hsl(var(--card))] md:py-28">
         <div className="absolute -left-24 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full border-[30px] border-[hsl(var(--secondary))]/15" />
         <div className="container-wide relative text-center">
-          <SectionLabel light>Quando estiver pronto</SectionLabel>
-          <h2 className="mx-auto max-w-3xl font-display text-[clamp(2.8rem,6vw,5.2rem)] font-bold leading-[.88] tracking-[-.06em]">Está na hora de tirar a escrita da tela e colocar o lápis no papel.</h2>
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-[hsl(var(--card))]/70">Tenha 50 páginas de atividades organizadas para acompanhar a criança da coordenação motora até suas primeiras palavras e frases.</p>
-          <PurchaseLink testId="link-final-checkout" className="mt-8 px-7 py-4">Quero o kit de escrita <ArrowRight size={17} /></PurchaseLink>
+          <SectionLabel light>Vamos escrever juntos?</SectionLabel>
+          <h2 className="mx-auto max-w-3xl font-display text-[clamp(2.8rem,6vw,5.2rem)] font-bold leading-[.88] tracking-[-.06em]">Toda grande história começa com um pequeno traço.</h2>
+          <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-[hsl(var(--card))]/70">Tenha 50 páginas de atividades organizadas para acompanhar cada tentativa, cada descoberta e cada “olha o que eu fiz!”.</p>
+          <PurchaseLink testId="link-final-checkout" className="mt-8 px-7 py-4"><PartyPopper size={17} /> Quero começar a brincadeira <ArrowRight size={17} /></PurchaseLink>
           <div className="mt-5 font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-[hsl(var(--card))]/50">PDF imprimível · 50 páginas · para crianças canhotas</div>
         </div>
       </section>

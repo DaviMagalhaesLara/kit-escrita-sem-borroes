@@ -250,6 +250,13 @@
 }
 .carousel-dot.is-active { width: 25px; background: #e96957; }
 .carousel-lightbox img { max-height: 92vh; }
+.kid-hello { box-shadow: 4px 5px 0 rgba(23,50,77,.08); }
+.kid-hello-stars { color: #f5b84b; font-size: 12px; letter-spacing: .15em; }
+.kid-note {
+  width: fit-content;
+  border-bottom: 2px dashed #f5b84b;
+  padding-bottom: 4px;
+}
 
 @media (max-width: 767px) {
   .container-wide { width: min(100% - 32px, 600px); }
