@@ -149,10 +149,120 @@
 .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
 .faq-answer[data-open='true'] { grid-template-rows: 1fr; }
 .faq-answer > div { min-height: 0; overflow: hidden; }
+.carousel-panel {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(245,184,75,.32) 0 44px, transparent 45px),
+    radial-gradient(circle at 94% 78%, rgba(233,105,87,.2) 0 70px, transparent 71px),
+    linear-gradient(135deg, #fff8e9 0%, #fff1e3 48%, #eaf7f5 100%);
+}
+.carousel-stage { min-height: 560px; }
+.carousel-doodle { position: absolute; z-index: 0; pointer-events: none; }
+.carousel-doodle-one { left: 4%; top: 32%; color: #e96957; font-size: 34px; transform: rotate(-18deg); }
+.carousel-doodle-two { right: 5%; top: 25%; color: #f5b84b; font-size: 38px; transform: rotate(15deg); }
+.carousel-doodle-three { bottom: 17%; left: 11%; color: #7dbeb4; font-size: 24px; }
+.carousel-slide {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(380px, 54%);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: transform .45s cubic-bezier(.2,.75,.25,1), opacity .45s ease, filter .45s ease;
+}
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 5px solid #fffdf8;
+  border-radius: 3px;
+  user-select: none;
+}
+.carousel-slide.is-center {
+  z-index: 3;
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(-1deg);
+  filter: drop-shadow(11px 14px 0 rgba(23,50,77,.17)) drop-shadow(0 17px 24px rgba(23,50,77,.18));
+}
+.carousel-slide.is-prev,
+.carousel-slide.is-next {
+  z-index: 2;
+  opacity: .58;
+  filter: saturate(.72) drop-shadow(7px 9px 0 rgba(23,50,77,.12));
+}
+.carousel-slide.is-prev { transform: translate(-122%, -50%) rotate(-7deg) scale(.82); }
+.carousel-slide.is-next { transform: translate(22%, -50%) rotate(7deg) scale(.82); }
+.carousel-slide:hover { opacity: 1; }
+.carousel-slide.is-center:hover { transform: translate(-50%, -50%) rotate(0deg) scale(1.015); }
+.carousel-page-tag {
+  position: absolute;
+  left: 13px;
+  top: 13px;
+  z-index: 2;
+  border-radius: 999px;
+  background: #e96957;
+  padding: 7px 10px;
+  color: #fffdf8;
+  font: 700 9px/1 var(--app-font-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 3px 4px 0 rgba(23,50,77,.12);
+}
+.carousel-zoom-hint {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  background: rgba(23,50,77,.9);
+  padding: 7px 10px;
+  color: #fffdf8;
+  font: 700 9px/1 var(--app-font-mono);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.carousel-control {
+  display: flex;
+  height: 39px;
+  width: 39px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(23,50,77,.16);
+  border-radius: 999px;
+  background: rgba(255,255,255,.78);
+  color: #17324d;
+  cursor: pointer;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.carousel-control:hover { background: #f5b84b; transform: translateY(-2px); }
+.carousel-dot {
+  height: 8px;
+  width: 8px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(23,50,77,.23);
+  cursor: pointer;
+  transition: width .25s ease, background-color .25s ease;
+}
+.carousel-dot.is-active { width: 25px; background: #e96957; }
+.carousel-lightbox img { max-height: 92vh; }
 
 @media (max-width: 767px) {
   .container-wide { width: min(100% - 32px, 600px); }
   .section-pad { padding-block: 76px; }
+  .carousel-stage { min-height: 445px; margin-inline: -6px; }
+  .carousel-slide { width: min(285px, 70%); }
+  .carousel-slide.is-prev { transform: translate(-118%, -50%) rotate(-7deg) scale(.78); }
+  .carousel-slide.is-next { transform: translate(18%, -50%) rotate(7deg) scale(.78); }
+  .carousel-page-tag { left: 9px; top: 9px; padding: 6px 8px; font-size: 8px; }
+  .carousel-zoom-hint { right: 9px; bottom: 9px; padding: 6px 8px; font-size: 8px; }
+  .carousel-doodle-one { left: 1%; top: 31%; font-size: 25px; }
+  .carousel-doodle-two { right: 1%; top: 22%; font-size: 28px; }
+  .carousel-doodle-three { bottom: 14%; left: 4%; font-size: 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

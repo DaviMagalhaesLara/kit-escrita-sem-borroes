@@ -1,14 +1,17 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
   ArrowDown,
   ArrowRight,
   BookOpen,
   Check,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   CircleCheck,
   FileDown,
   Hand,
   Heart,
+  Maximize2,
   Menu,
   Pencil,
   Printer,
@@ -169,28 +172,144 @@ function PagePreview({
   );
 }
 
+const EBOOK_SAMPLES = [
+  { page: 1, title: 'Vamos começar!', subtitle: 'Guia para pais e professoras', image: 'ebook-samples/page-01.png' },
+  { page: 6, title: 'Caminhos', subtitle: 'Aquecimento e coordenação', image: 'ebook-samples/page-06.png' },
+  { page: 10, title: 'Arcos', subtitle: 'Pré-escrita', image: 'ebook-samples/page-10.png' },
+  { page: 15, title: 'Letras maiúsculas', subtitle: 'Observe, cubra e pratique', image: 'ebook-samples/page-15.png' },
+  { page: 25, title: 'Sílabas', subtitle: 'Observe, copie e escreva', image: 'ebook-samples/page-25.png' },
+  { page: 30, title: 'Mais palavras', subtitle: 'Palavras do dia a dia', image: 'ebook-samples/page-30.png' },
+  { page: 40, title: 'Texto 2', subtitle: 'Pequenos textos', image: 'ebook-samples/page-40.png' },
+] as const;
+
+const ebookAssetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 function EbookCarouselSlot() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [modalIndex, setModalIndex] = useState<number | null>(null);
+  const pointerStart = useRef<number | null>(null);
+
+  const goTo = (index: number) => {
+    setActiveIndex((index + EBOOK_SAMPLES.length) % EBOOK_SAMPLES.length);
+  };
+
+  const goNext = () => goTo(activeIndex + 1);
+  const goPrevious = () => goTo(activeIndex - 1);
+
+  useEffect(() => {
+    if (modalIndex === null) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setModalIndex(null);
+      if (event.key === 'ArrowRight') setModalIndex((index) => index === null ? null : (index + 1) % EBOOK_SAMPLES.length);
+      if (event.key === 'ArrowLeft') setModalIndex((index) => index === null ? null : (index - 1 + EBOOK_SAMPLES.length) % EBOOK_SAMPLES.length);
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [modalIndex]);
+
+  const samplePositions = [
+    { index: (activeIndex - 1 + EBOOK_SAMPLES.length) % EBOOK_SAMPLES.length, position: 'prev' },
+    { index: activeIndex, position: 'center' },
+    { index: (activeIndex + 1) % EBOOK_SAMPLES.length, position: 'next' },
+  ] as const;
+
   return (
-    <div id="ebook-carousel" className="mt-16 scroll-mt-24 rounded-[28px] border border-dashed border-[hsl(var(--secondary))]/60 bg-[hsl(var(--card))]/[.06] p-5 md:p-8" data-testid="ebook-carousel-slot" aria-label="Espaço reservado para o carrossel do e-book">
-      <div className="relative flex min-h-[330px] items-center justify-center overflow-hidden rounded-[20px] border border-[hsl(var(--card))]/20 bg-[hsl(var(--card))]/[.06] p-6 md:min-h-[410px]">
-        <div className="absolute left-[10%] top-[12%] h-48 w-36 rotate-[-9deg] rounded border border-[hsl(var(--card))]/20 bg-[hsl(var(--card))]/10" />
-        <div className="absolute right-[10%] top-[16%] h-52 w-40 rotate-[9deg] rounded border border-[hsl(var(--card))]/20 bg-[hsl(var(--card))]/10" />
-        <div className="relative z-10 w-full max-w-[390px] rounded-[8px] border border-[hsl(var(--card))]/40 bg-[hsl(var(--card))] p-7 text-center shadow-[10px_12px_0_rgba(0,0,0,.12)]">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[hsl(var(--secondary))] text-[hsl(var(--primary))]">
-            <BookOpen size={22} strokeWidth={1.8} />
+    <div id="ebook-carousel" className="ebook-carousel mt-16 scroll-mt-24 rounded-[28px] border border-[hsl(var(--secondary))]/70 bg-[hsl(var(--card))]/[.06] p-4 md:p-7" data-testid="ebook-carousel-slot" aria-label="Carrossel com amostras reais do e-book">
+      <div className="carousel-panel relative overflow-hidden rounded-[23px] p-5 md:p-8">
+        <span className="carousel-doodle carousel-doodle-one" aria-hidden="true">✦</span>
+        <span className="carousel-doodle carousel-doodle-two" aria-hidden="true">✷</span>
+        <span className="carousel-doodle carousel-doodle-three" aria-hidden="true">●</span>
+        <div className="relative z-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/75 px-3 py-2 font-mono-label text-[9px] font-bold uppercase tracking-[.13em] text-[#17324d] shadow-[3px_4px_0_rgba(23,50,77,.08)]">
+              <Pencil size={12} className="text-[#e96957]" />
+              folheie comigo
+            </div>
+            <h3 className="mt-4 max-w-lg font-display text-[clamp(2rem,4vw,3.4rem)] font-bold leading-[.9] tracking-[-.05em] text-[#17324d]">Um pouquinho do que acontece em cada página.</h3>
           </div>
-          <div className="mt-5 font-mono-label text-[9px] font-bold uppercase tracking-[.14em] text-[hsl(var(--accent))]">carrossel do e-book</div>
-          <h3 className="mt-3 font-display text-[28px] font-bold leading-none text-[hsl(var(--primary))]">As páginas reais entram aqui.</h3>
-          <p className="mx-auto mt-4 max-w-[290px] text-sm leading-6 text-[hsl(var(--muted-foreground))]">Este espaço já está reservado para você folhear o Kit antes da compra assim que enviar os arquivos.</p>
-          <div className="mt-6 flex items-center justify-center gap-2">
-            {[0, 1, 2, 3, 4].map((item) => <span key={item} className={`h-2 w-2 rounded-full ${item === 0 ? 'bg-[hsl(var(--accent))]' : 'bg-[hsl(var(--border))]'}`} />)}
+          <div className="flex items-center gap-2 text-right font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-[#17324d]/60">
+            <BookOpen size={16} className="text-[#e96957]" />
+            <span>7 amostras reais<br />de 50 páginas</span>
           </div>
         </div>
+
+        <div
+          className="carousel-stage relative z-10 mt-8 touch-pan-y"
+          onPointerDown={(event) => { pointerStart.current = event.clientX; }}
+          onPointerUp={(event) => {
+            if (pointerStart.current === null) return;
+            const distance = event.clientX - pointerStart.current;
+            if (Math.abs(distance) > 45) distance < 0 ? goNext() : goPrevious();
+            pointerStart.current = null;
+          }}
+          onPointerCancel={() => { pointerStart.current = null; }}
+          data-testid="ebook-carousel-stage"
+        >
+          {samplePositions.map(({ index, position }) => {
+            const sample = EBOOK_SAMPLES[index];
+            const isCenter = position === 'center';
+            return (
+              <button
+                key={`${sample.page}-${position}`}
+                type="button"
+                className={`carousel-slide is-${position}`}
+                onClick={() => isCenter ? setModalIndex(index) : goTo(index)}
+                aria-label={isCenter ? `Ampliar amostra da página ${sample.page}` : `Mostrar amostra da página ${sample.page}`}
+                data-testid={`carousel-slide-${sample.page}`}
+              >
+                <span className="carousel-page-tag">página {sample.page}</span>
+                <img src={ebookAssetUrl(sample.image)} alt={`Página ${sample.page}: ${sample.title}`} draggable="false" />
+                {isCenter && <span className="carousel-zoom-hint"><Maximize2 size={13} /> ampliar</span>}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="relative z-10 mt-5 flex items-center justify-center gap-3">
+          <button type="button" onClick={goPrevious} className="carousel-control" aria-label="Amostra anterior" data-testid="button-carousel-previous"><ChevronLeft size={19} /></button>
+          <div className="flex items-center gap-2" aria-label={`Amostra ${activeIndex + 1} de ${EBOOK_SAMPLES.length}`}>
+            {EBOOK_SAMPLES.map((sample, index) => (
+              <button
+                key={sample.page}
+                type="button"
+                onClick={() => goTo(index)}
+                className={`carousel-dot ${index === activeIndex ? 'is-active' : ''}`}
+                aria-label={`Ir para a página ${sample.page}`}
+                aria-current={index === activeIndex ? 'true' : undefined}
+                data-testid={`button-carousel-dot-${sample.page}`}
+              />
+            ))}
+          </div>
+          <button type="button" onClick={goNext} className="carousel-control" aria-label="Próxima amostra" data-testid="button-carousel-next"><ChevronRight size={19} /></button>
+        </div>
+        <div className="relative z-10 mt-4 flex flex-col items-center justify-between gap-2 text-center sm:flex-row sm:text-left">
+          <p className="font-display text-xl font-bold text-[#17324d]">{EBOOK_SAMPLES[activeIndex].title}</p>
+          <p className="font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-[#17324d]/55">{EBOOK_SAMPLES[activeIndex].subtitle} · deslize para ver mais</p>
+        </div>
       </div>
-      <div className="mt-5 flex flex-col gap-2 text-center md:flex-row md:items-center md:justify-between md:text-left">
-        <p className="font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-[hsl(var(--secondary))]">espaço preparado para 10 páginas</p>
-        <p className="text-xs text-[hsl(var(--card))]/55">Setas, indicadores, swipe e ampliação serão ativados com as páginas finais.</p>
+
+      <div className="mt-4 flex flex-col gap-2 px-1 text-center md:flex-row md:items-center md:justify-between md:text-left">
+        <p className="flex items-center justify-center gap-2 font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-[hsl(var(--secondary))] md:justify-start"><Sparkles size={13} /> páginas reais do kit</p>
+        <p className="text-xs text-[hsl(var(--card))]/65">Clique na página central para ampliar.</p>
       </div>
+
+      {modalIndex !== null && (
+        <div className="carousel-lightbox fixed inset-0 z-[70] flex items-center justify-center bg-[#10263b]/90 p-4 backdrop-blur-sm" onClick={(event) => { if (event.currentTarget === event.target) setModalIndex(null); }} role="dialog" aria-modal="true" aria-label={`Visualização ampliada da página ${EBOOK_SAMPLES[modalIndex].page}`}>
+          <button type="button" onClick={() => setModalIndex(null)} className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25" aria-label="Fechar visualização" data-testid="button-carousel-close"><X size={22} /></button>
+          <button type="button" onClick={() => setModalIndex((modalIndex - 1 + EBOOK_SAMPLES.length) % EBOOK_SAMPLES.length)} className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25 md:left-8" aria-label="Página ampliada anterior" data-testid="button-lightbox-previous"><ChevronLeft size={25} /></button>
+          <div className="relative max-h-[92vh] max-w-[min(82vw,660px)]">
+            <img className="max-h-[92vh] max-w-full rounded-[4px] bg-white object-contain shadow-[0_20px_80px_rgba(0,0,0,.35)]" src={ebookAssetUrl(EBOOK_SAMPLES[modalIndex].image)} alt={`Página ${EBOOK_SAMPLES[modalIndex].page}: ${EBOOK_SAMPLES[modalIndex].title}`} />
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-[#17324d]/90 px-4 py-2 font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-white">página {EBOOK_SAMPLES[modalIndex].page} · {EBOOK_SAMPLES[modalIndex].title}</div>
+          </div>
+          <button type="button" onClick={() => setModalIndex((modalIndex + 1) % EBOOK_SAMPLES.length)} className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25 md:right-8" aria-label="Próxima página ampliada" data-testid="button-lightbox-next"><ChevronRight size={25} /></button>
+        </div>
+      )}
     </div>
   );
 }
