@@ -13,9 +13,12 @@ import {
   Heart,
   Maximize2,
   Menu,
+  MapPin,
   PartyPopper,
   Pencil,
   Printer,
+  Quote,
+  ShoppingBag,
   Smile,
   ShieldCheck,
   Sparkles,
@@ -187,6 +190,113 @@ const EBOOK_SAMPLES = [
 
 const ebookAssetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
+const TESTIMONIALS = [
+  {
+    name: 'Carlos Eduardo',
+    location: 'Rio de Janeiro',
+    quote: 'Meu filho conseguiu escrever com autonomia e está se dando muito bem!! Atividades muito práticas e divertidas, ele amou! Muito obrigado!',
+  },
+  {
+    name: 'Renata de Oliveira',
+    location: 'Minas Gerais',
+    quote: 'A escrita da minha filha se desenvolveu de uma maneira absurda! Ela se divertiu demais fazendo as atividades e aprendeu a dominar sua mão esquerda! Desde já agradeço!',
+  },
+  {
+    name: 'Anderson Santos',
+    location: 'Recife',
+    quote: 'Meus filhotinhos que nasceram canhotos aprenderam certinho a escrita com o seu material, tamo junto demais!!',
+  },
+] as const;
+
+const RECENT_PURCHASES = [
+  'Lucas Machado',
+  'Gabriel Souza',
+  'Ingrid de Jesus',
+  'Milena Pereira',
+] as const;
+
+function StarRating({ label = '5,0 de 5 estrelas' }: { label?: string }) {
+  return (
+    <div className="flex items-center gap-1" aria-label={label}>
+      {[1, 2, 3, 4, 5].map((star) => (
+        <Star key={star} size={15} fill="currentColor" strokeWidth={1.5} className="text-[#f5b84b]" aria-hidden="true" />
+      ))}
+    </div>
+  );
+}
+
+function TestimonialsSection() {
+  return (
+    <section id="avaliacoes" className="section-pad scroll-mt-20 border-y border-[hsl(var(--border))] bg-[hsl(var(--muted))]">
+      <div className="container-wide">
+        <div className="grid items-end gap-8 md:grid-cols-[1fr_auto]">
+          <div>
+            <SectionLabel>Quem já colocou a mão na massa</SectionLabel>
+            <h2 className="max-w-3xl font-display text-[clamp(2.7rem,5vw,4.7rem)] font-bold leading-[.9] tracking-[-.06em] text-[hsl(var(--primary))]">
+              Pequenas conquistas que merecem um “muito bem!”.
+            </h2>
+            <p className="mt-5 max-w-xl text-[15px] leading-7 text-[hsl(var(--muted-foreground))]">
+              Avaliações recebidas de famílias que já experimentaram as atividades do Kit Escrita Sem Borrões.
+            </p>
+          </div>
+          <div className="rating-summary rounded-[22px] border border-[hsl(var(--secondary))] bg-[hsl(var(--card))] px-6 py-5 text-center shadow-[5px_6px_0_rgba(23,50,77,.08)]">
+            <div className="font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-[hsl(var(--muted-foreground))]">avaliação média</div>
+            <div className="mt-2 flex items-center justify-center gap-2">
+              <span className="font-display text-4xl font-bold leading-none text-[hsl(var(--primary))]">4,9</span>
+              <span className="text-xs text-[hsl(var(--muted-foreground))]">/ 5</span>
+            </div>
+            <StarRating label="4,9 de 5 estrelas" />
+            <div className="mt-2 text-[10px] font-bold text-[hsl(var(--muted-foreground))]">mais de 4,7 estrelas</div>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {TESTIMONIALS.map((testimonial, index) => (
+            <article key={testimonial.name} className={`testimonial-card rounded-[24px] border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-7 ${index === 1 ? 'lg:-translate-y-3' : ''}`} data-testid={`testimonial-card-${index}`}>
+              <div className="flex items-start justify-between gap-4">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#fff0c7] text-[hsl(var(--accent))]">
+                  <Quote size={20} fill="currentColor" strokeWidth={1.5} />
+                </span>
+                <StarRating />
+              </div>
+              <blockquote className="mt-6 font-display text-[21px] font-bold leading-[1.12] text-[hsl(var(--primary))]">“{testimonial.quote}”</blockquote>
+              <div className="mt-7 border-t border-[hsl(var(--border))] pt-5">
+                <div className="text-sm font-bold text-[hsl(var(--primary))]">{testimonial.name}</div>
+                <div className="mt-1 flex items-center gap-1.5 text-xs text-[hsl(var(--muted-foreground))]">
+                  <MapPin size={13} className="text-[hsl(var(--accent))]" />
+                  {testimonial.location}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="mt-7 text-center font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-[hsl(var(--muted-foreground))]">
+          Depoimentos compartilhados por clientes
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function PurchaseNotification({ customer }: { customer: string }) {
+  return (
+    <div className="purchase-notification" role="status" aria-live="polite" data-testid="purchase-notification">
+      <div className="flex items-start gap-3">
+        <span className="purchase-notification-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d9f1ec] text-[hsl(var(--primary))]">
+          <ShoppingBag size={18} />
+        </span>
+        <div className="min-w-0">
+          <div className="font-mono-label text-[8px] font-bold uppercase tracking-[.1em] text-[hsl(var(--accent))]">simulação de compra</div>
+          <p className="mt-1 text-sm font-bold leading-5 text-[hsl(var(--primary))]">
+            {customer} acabou de comprar o kit
+          </p>
+          <p className="mt-1 text-[10px] leading-4 text-[hsl(var(--muted-foreground))]">Aviso demonstrativo da página</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function EbookCarouselSlot() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
@@ -356,10 +466,12 @@ function FaqItem({
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [purchaseIndex, setPurchaseIndex] = useState(0);
   const navItems = [
     { label: 'Por dentro', id: 'por-dentro' },
     { label: 'Amostras', id: 'amostras' },
     { label: 'Como funciona', id: 'como-funciona' },
+    { label: 'Avaliações', id: 'avaliacoes' },
     { label: 'Dúvidas', id: 'duvidas' },
   ];
   const faqs = [
@@ -369,6 +481,14 @@ function Home() {
     ['A criança precisa escrever com a mão esquerda?', 'Sim. O kit foi organizado para crianças canhotas, com orientações visuais e espaço que tornam o uso da folha mais confortável para quem escreve com a mão esquerda.'],
     ['Como recebo o arquivo?', 'Depois da confirmação da compra, o acesso ao PDF é enviado conforme as instruções do checkout. O arquivo pode ser baixado e impresso quando você quiser.'],
   ];
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setPurchaseIndex((index) => (index + 1) % RECENT_PURCHASES.length);
+    }, 6500);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   return (
     <main className="site-shell min-h-[100dvh] bg-[hsl(var(--background))]">
@@ -592,6 +712,8 @@ function Home() {
         </div>
       </section>
 
+      <TestimonialsSection />
+
       <section id="comprar" className="section-pad scroll-mt-20">
         <div className="container-wide">
           <div className="relative overflow-hidden rounded-[30px] bg-[hsl(var(--accent))] px-6 py-12 text-[hsl(var(--card))] md:px-16 md:py-16">
@@ -614,6 +736,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <PurchaseNotification customer={RECENT_PURCHASES[purchaseIndex]} />
 
       <section className="border-y border-[hsl(var(--border))] bg-[hsl(var(--muted))] py-20 md:py-24">
         <div className="container-wide">

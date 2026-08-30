@@ -257,6 +257,33 @@
   border-bottom: 2px dashed #f5b84b;
   padding-bottom: 4px;
 }
+.rating-summary { min-width: 185px; }
+.testimonial-card {
+  box-shadow: 5px 6px 0 rgba(23,50,77,.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 7px 10px 0 rgba(23,50,77,.09);
+}
+.purchase-notification {
+  position: fixed;
+  left: 20px;
+  bottom: 22px;
+  z-index: 35;
+  width: min(320px, calc(100vw - 40px));
+  border: 1px solid hsl(var(--border));
+  border-radius: 18px;
+  background: hsl(var(--card) / .97);
+  padding: 13px 15px;
+  box-shadow: 0 12px 35px rgba(23,50,77,.16), 5px 6px 0 rgba(23,50,77,.06);
+  animation: notification-in .45s cubic-bezier(.2,.75,.25,1) both;
+}
+.purchase-notification-icon { box-shadow: inset 0 0 0 1px rgba(23,50,77,.06); }
+@keyframes notification-in {
+  from { opacity: 0; transform: translate(-16px, 12px); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
 
 @media (max-width: 767px) {
   .container-wide { width: min(100% - 32px, 600px); }
@@ -270,6 +297,11 @@
   .carousel-doodle-one { left: 1%; top: 31%; font-size: 25px; }
   .carousel-doodle-two { right: 1%; top: 22%; font-size: 28px; }
   .carousel-doodle-three { bottom: 14%; left: 4%; font-size: 18px; }
+  .purchase-notification {
+    left: 16px;
+    bottom: 78px;
+    width: min(300px, calc(100vw - 32px));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
