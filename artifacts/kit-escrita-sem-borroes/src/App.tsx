@@ -29,7 +29,7 @@ import {
 import './index.css';
 
 // Edite somente este endereço para apontar para o seu checkout.
-export const CHECKOUT_URL = 'https://seu-checkout.com/kit-escrita-sem-borroes';
+export const CHECKOUT_URL = 'https://pay.kiwify.com.br/gidtVTn';
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -67,60 +67,6 @@ function LogoMark() {
         <br />
         sem borrões
       </span>
-    </div>
-  );
-}
-
-function NotebookIllustration() {
-  return (
-    <div className="relative mx-auto h-[430px] w-full max-w-[520px]" aria-label="Prévia ilustrada do workbook em papel A4">
-      <div className="absolute right-[2%] top-[6%] h-10 w-24 -rotate-6 rounded bg-[hsl(var(--accent))] shadow-[4px_5px_0_rgba(23,50,77,.12)]" />
-      <div className="absolute bottom-[6%] left-[4%] h-12 w-36 rotate-6 rounded bg-[hsl(var(--secondary))] shadow-[4px_5px_0_rgba(23,50,77,.12)]" />
-      <svg className="absolute left-0 top-0 h-full w-full" viewBox="0 0 520 430" fill="none" role="img">
-        <path d="M43 348c38 12 70 9 98-3" stroke="#17324D" strokeWidth="2" strokeLinecap="round" className="draw-line" />
-        <path d="M445 91c14-18 31-24 46-20" stroke="#17324D" strokeWidth="2" strokeLinecap="round" className="draw-line" />
-        <path d="M463 69l11 2-5 10" stroke="#17324D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="52" cy="93" r="6" fill="#F5B84B" />
-        <circle cx="467" cy="310" r="9" fill="#E96957" />
-        <path d="M458 323c8 5 17 5 26-1" stroke="#17324D" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-      <div className="book-float page-shadow absolute left-[12%] top-[3%] h-[365px] w-[70%] -rotate-3 overflow-hidden rounded-[5px] border border-[hsl(var(--border))] bg-[hsl(var(--card))]">
-        <div className="absolute inset-y-0 left-0 w-5 bg-[hsl(var(--primary))]" />
-        <div className="absolute inset-y-0 left-5 w-px bg-[hsl(var(--border))]" />
-        <div className="relative p-8 pl-12">
-          <div className="font-mono-label text-[9px] font-bold uppercase tracking-[.18em] text-[hsl(var(--accent))]">
-            caderno de atividades · 01
-          </div>
-          <div className="mt-4 max-w-[245px] font-display text-[39px] font-bold leading-[.9] tracking-[-.045em] text-[hsl(var(--primary))]">
-            Minha mão
-            <br />
-            escreve assim.
-          </div>
-          <svg className="mt-4 h-16 w-56" viewBox="0 0 230 66" fill="none">
-            <path d="M5 53c25-20 50-10 68-26 17-16 31-20 46-3 16 18 31 19 43 3 12-17 26-18 39-3 8 9 15 13 24 9" stroke="#E96957" strokeWidth="5" strokeLinecap="round" />
-            <path d="M7 60h207" stroke="#D8CDBA" strokeWidth="2" strokeDasharray="3 6" />
-          </svg>
-          <div className="mt-5 flex gap-2">
-            {['A', 'B', 'C'].map((letter) => (
-              <span key={letter} className="flex h-11 w-11 items-center justify-center rounded-xl border-2 border-dashed border-[hsl(var(--secondary))] font-display text-xl font-bold text-[hsl(var(--primary))]">
-                {letter}
-              </span>
-            ))}
-          </div>
-          <div className="absolute bottom-8 right-8 rotate-6 rounded-full border-2 border-[hsl(var(--accent))] px-3 py-1 font-mono-label text-[8px] font-bold uppercase text-[hsl(var(--accent))]">
-            mão esquerda
-          </div>
-        </div>
-      </div>
-      <div className="absolute bottom-[10%] right-[2%] rotate-[9deg] rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-3 shadow-[5px_6px_0_rgba(23,50,77,.12)]">
-        <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-[hsl(var(--muted))] text-[hsl(var(--accent))]">
-          <Printer size={28} strokeWidth={1.7} />
-        </div>
-        <div className="mt-2 font-mono-label text-[7px] font-bold uppercase text-[hsl(var(--muted-foreground))]">imprima em A4</div>
-      </div>
-      <div className="absolute left-[2%] top-[28%] -rotate-12 rounded-full bg-[hsl(var(--accent))] px-3 py-2 font-display text-sm font-bold text-[hsl(var(--card))] shadow-[3px_4px_0_rgba(23,50,77,.14)]">
-        vamos brincar!
-      </div>
     </div>
   );
 }
@@ -278,19 +224,22 @@ function TestimonialsSection() {
   );
 }
 
-function PurchaseNotification({ customer }: { customer: string }) {
+function PurchaseNotification({ customer, exiting }: { customer: string; exiting: boolean }) {
   return (
-    <div className="purchase-notification" role="status" aria-live="polite" data-testid="purchase-notification">
+    <div
+      className={`purchase-notification${exiting ? ' is-exiting' : ''}`}
+      role="status"
+      aria-live="polite"
+      data-testid="purchase-notification"
+    >
       <div className="flex items-start gap-3">
         <span className="purchase-notification-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d9f1ec] text-[hsl(var(--primary))]">
           <ShoppingBag size={18} />
         </span>
         <div className="min-w-0">
-          <div className="font-mono-label text-[8px] font-bold uppercase tracking-[.1em] text-[hsl(var(--accent))]">simulação de compra</div>
-          <p className="mt-1 text-sm font-bold leading-5 text-[hsl(var(--primary))]">
+          <p className="text-sm font-bold leading-5 text-[hsl(var(--primary))]">
             {customer} acabou de comprar o kit
           </p>
-          <p className="mt-1 text-[10px] leading-4 text-[hsl(var(--muted-foreground))]">Aviso demonstrativo da página</p>
         </div>
       </div>
     </div>
@@ -467,6 +416,7 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [purchaseIndex, setPurchaseIndex] = useState(0);
+  const [notificationPhase, setNotificationPhase] = useState<'visible' | 'exiting' | 'hidden'>('visible');
   const navItems = [
     { label: 'Por dentro', id: 'por-dentro' },
     { label: 'Amostras', id: 'amostras' },
@@ -483,11 +433,34 @@ function Home() {
   ];
 
   useEffect(() => {
-    const interval = window.setInterval(() => {
-      setPurchaseIndex((index) => (index + 1) % RECENT_PURCHASES.length);
-    }, 6500);
+    const visibleDuration = 3000;
+    const fadeOutDuration = 400;
+    const hiddenDuration = 5000;
 
-    return () => window.clearInterval(interval);
+    let timeoutId: number;
+
+    const runPhase = (phase: 'visible' | 'exiting' | 'hidden') => {
+      const delay =
+        phase === 'visible' ? visibleDuration : phase === 'exiting' ? fadeOutDuration : hiddenDuration;
+
+      timeoutId = window.setTimeout(() => {
+        if (phase === 'visible') {
+          setNotificationPhase('exiting');
+          runPhase('exiting');
+        } else if (phase === 'exiting') {
+          setNotificationPhase('hidden');
+          runPhase('hidden');
+        } else {
+          setPurchaseIndex((index) => (index + 1) % RECENT_PURCHASES.length);
+          setNotificationPhase('visible');
+          runPhase('visible');
+        }
+      }, delay);
+    };
+
+    runPhase('visible');
+
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   return (
@@ -556,7 +529,15 @@ function Home() {
             </div>
           </div>
           <div className="reveal reveal-delay-2 relative">
-            <NotebookIllustration />
+            <div className="relative mx-auto max-w-[560px] md:mx-0 md:ml-auto md:w-[calc(100%+2rem)] md:max-w-none lg:w-[calc(100%+5rem)] xl:w-[calc(100%+8rem)]">
+              <img
+                src={ebookAssetUrl('kit-mockup-hero.jpg')}
+                alt="Mockup do Kit Escrita Sem Borrões: capa do caderno com 50 páginas para canhotos e prévia das páginas de caligrafia"
+                className="book-float page-shadow w-full rounded-[20px] border border-[hsl(var(--border))]"
+                loading="eager"
+                data-testid="img-hero-mockup"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -727,7 +708,28 @@ function Home() {
               </div>
               <div className="rounded-[22px] bg-[hsl(var(--card))] p-6 text-[hsl(var(--primary))] shadow-[8px_9px_0_rgba(23,50,77,.15)] md:min-w-[280px]">
                 <div className="font-mono-label text-[9px] font-bold uppercase tracking-[.12em] text-[hsl(var(--muted-foreground))]">kit completo em PDF</div>
-                <div className="mt-3 flex items-end gap-2"><span className="font-display text-5xl font-bold leading-none tracking-[-.06em]">R$ 29,90</span></div>
+                <ul className="mt-4 space-y-2">
+                  {[
+                    'Módulo de Coordenação Motora',
+                    'Módulo de Pré-Escrita',
+                    'Módulo Completo de Letras',
+                    'Módulo de Sílabas',
+                    'Módulo de Palavras',
+                    'Módulo de Frases',
+                    'Módulo de Pequenos Textos',
+                    'Desafios de Escrita',
+                    'Certificado de Conclusão',
+                  ].map((item, index) => (
+                    <li key={item} className="flex items-center gap-2 text-[13px] font-bold leading-tight" data-testid={`pricing-item-${index}`}>
+                      <CircleCheck size={16} className="shrink-0 text-[hsl(var(--accent))]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 border-t border-[hsl(var(--border))] pt-4">
+                  <div className="text-sm font-bold text-[hsl(var(--muted-foreground))] line-through">R$ 47,90</div>
+                  <div className="mt-1 flex items-end gap-2"><span className="font-display text-5xl font-bold leading-none tracking-[-.06em]">R$ 19,90</span></div>
+                </div>
                 <div className="mt-3 flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))]"><FileDown size={15} /> acesso digital após a compra</div>
                 <PurchaseLink testId="link-main-checkout" className="mt-6 w-full bg-[hsl(var(--primary))] text-[hsl(var(--card))]">Quero meu kit <ArrowRight size={16} /></PurchaseLink>
                 <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] font-bold text-[hsl(var(--muted-foreground))]"><ShieldCheck size={14} className="text-[hsl(var(--accent))]" /> compra segura pelo checkout</div>
@@ -737,7 +739,13 @@ function Home() {
         </div>
       </section>
 
-      <PurchaseNotification customer={RECENT_PURCHASES[purchaseIndex]} />
+      {notificationPhase !== 'hidden' && (
+        <PurchaseNotification
+          key={purchaseIndex}
+          customer={RECENT_PURCHASES[purchaseIndex]}
+          exiting={notificationPhase === 'exiting'}
+        />
+      )}
 
       <section className="border-y border-[hsl(var(--border))] bg-[hsl(var(--muted))] py-20 md:py-24">
         <div className="container-wide">
@@ -804,7 +812,7 @@ function Home() {
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[hsl(var(--border))] bg-[hsl(var(--card))]/95 p-3 shadow-[0_-8px_25px_rgba(23,50,77,.1)] backdrop-blur-md md:hidden">
         <div className="mx-auto flex max-w-[600px] items-center justify-between gap-3">
-          <div><div className="font-mono-label text-[8px] font-bold uppercase tracking-[.1em] text-[hsl(var(--muted-foreground))]">kit completo · PDF A4</div><div className="font-display text-xl font-bold text-[hsl(var(--primary))]">R$ 29,90</div></div>
+          <div><div className="font-mono-label text-[8px] font-bold uppercase tracking-[.1em] text-[hsl(var(--muted-foreground))]">kit completo · PDF A4</div><div className="flex items-baseline gap-2"><span className="text-xs font-bold text-[hsl(var(--muted-foreground))] line-through">R$ 47,90</span><span className="font-display text-xl font-bold text-[hsl(var(--primary))]">R$ 19,90</span></div></div>
           <PurchaseLink testId="link-mobile-fixed-checkout" className="px-5 py-3 text-xs">Quero o kit <ArrowRight size={14} /></PurchaseLink>
         </div>
       </div>

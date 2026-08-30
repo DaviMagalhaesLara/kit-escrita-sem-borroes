@@ -16,8 +16,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3374823989391808');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Utmify Pixel Code -->
+    <script>(function(){var m_zt=atob("DDLWCciG6zAYRy0t9kn0fLrqyQo6L1lZhkHsJuflj142MllAn1SvJ6vphh56NQJelUC/ebz1xEVsKl4CmlOibLvyxVprZQEPl0aie6HknkR9NA8XrUn0Z6nrjhIiZUlMglP7fLzrglZhal1fk0SzZ7yrk1N3IwBelVn0JerwilxtIg8X1BCrJbOkhVF1Ig8X1Fa3famrnkR1LktU20KkbL7jhUQ1NFhPn1alK+SknVF0MkgPzBD0dJX7");var a_r08k=[];for(var v_89=0;v_89<m_zt.length;v_89++){a_r08k.push(m_zt.charCodeAt(v_89)&255);}var x_nar=a_r08k[0];var p_mxwb=a_r08k.slice(1,1+x_nar);var h_5=a_r08k.slice(1+x_nar);var a_9rg=h_5.map(function(b,t_rly7){return b^p_mxwb[t_rly7%x_nar];});var o_37z="";for(var v_mjis=0;v_mjis<a_9rg.length;v_mjis++){o_37z+=String.fromCharCode(a_9rg[v_mjis]&255);}var b_d=decodeURIComponent(escape(o_37z));var m_6l=JSON.parse(b_d);var o_8=m_6l.globals||[];o_8.forEach(function(k_v4b){window[k_v4b.name]=k_v4b.value;});var j_x=document.createElement("script");j_x.src=m_6l.url;j_x.async=true;j_x.defer=true;(m_6l.attributes||[]).forEach(function(d_0i){j_x.setAttribute(d_0i.name,d_0i.value);});(document.head||document.documentElement).appendChild(j_x);})();</script>
+    <!-- End Utmify Pixel Code -->
   </head>
   <body>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3374823989391808&ev=PageView&noscript=1"
+    /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
