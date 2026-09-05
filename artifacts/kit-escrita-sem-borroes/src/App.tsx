@@ -38,9 +38,34 @@ const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
+function easeInOutCubic(t: number) {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+// Rolagem animada manualmente (em vez de depender do scrollIntoView nativo do navegador)
+// para garantir uma descida sempre fluida e com a mesma duração em qualquer navegador.
 function scrollToMainCheckout(event?: { preventDefault: () => void }) {
   event?.preventDefault();
-  scrollTo(MAIN_CHECKOUT_SECTION_ID);
+  const target = document.getElementById(MAIN_CHECKOUT_SECTION_ID);
+  if (!target) return;
+
+  const scrollMarginTop = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+  const startY = window.scrollY;
+  const targetY = Math.max(0, target.getBoundingClientRect().top + startY - scrollMarginTop);
+  const distance = targetY - startY;
+  if (Math.abs(distance) < 1) return;
+
+  const duration = 900;
+  let startTime: number | null = null;
+
+  const step = (timestamp: number) => {
+    if (startTime === null) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
 }
 
 function PurchaseLink({
