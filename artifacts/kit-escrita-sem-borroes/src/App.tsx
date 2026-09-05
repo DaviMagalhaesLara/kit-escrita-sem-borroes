@@ -31,22 +31,35 @@ import './index.css';
 // Edite somente este endereço para apontar para o seu checkout.
 export const CHECKOUT_URL = 'https://pay.kiwify.com.br/gidtVTn';
 
+// Seção que contém o botão principal de compra (com preço e o que vem no produto).
+const MAIN_CHECKOUT_SECTION_ID = 'comprar';
+
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
+
+function scrollToMainCheckout(event?: { preventDefault: () => void }) {
+  event?.preventDefault();
+  scrollTo(MAIN_CHECKOUT_SECTION_ID);
+}
 
 function PurchaseLink({
   children,
   className = '',
   testId,
+  variant = 'scroll',
 }: {
   children: ReactNode;
   className?: string;
   testId: string;
+  /** 'checkout' vai direto para o Kiwify (reservado ao botão principal). 'scroll' desce até o botão principal. */
+  variant?: 'checkout' | 'scroll';
 }) {
+  const isCheckout = variant === 'checkout';
   return (
     <a
-      href={CHECKOUT_URL}
+      href={isCheckout ? CHECKOUT_URL : `#${MAIN_CHECKOUT_SECTION_ID}`}
+      onClick={isCheckout ? undefined : scrollToMainCheckout}
       data-testid={testId}
       className={`btn-lift inline-flex items-center justify-center gap-2 rounded-full bg-[hsl(var(--secondary))] px-6 py-3.5 text-sm font-bold text-[hsl(var(--foreground))] no-underline ${className}`}
     >
@@ -731,7 +744,7 @@ function Home() {
                   <div className="mt-1 flex items-end gap-2"><span className="font-display text-5xl font-bold leading-none tracking-[-.06em]">R$ 19,90</span></div>
                 </div>
                 <div className="mt-3 flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))]"><FileDown size={15} /> acesso digital após a compra</div>
-                <PurchaseLink testId="link-main-checkout" className="mt-6 w-full bg-[hsl(var(--primary))] text-[hsl(var(--card))]">Quero meu kit <ArrowRight size={16} /></PurchaseLink>
+                <PurchaseLink testId="link-main-checkout" variant="checkout" className="mt-6 w-full bg-[hsl(var(--primary))] text-[hsl(var(--card))]">Quero meu kit <ArrowRight size={16} /></PurchaseLink>
                 <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] font-bold text-[hsl(var(--muted-foreground))]"><ShieldCheck size={14} className="text-[hsl(var(--accent))]" /> compra segura pelo checkout</div>
               </div>
             </div>
